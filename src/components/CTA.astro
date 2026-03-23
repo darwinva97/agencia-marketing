@@ -1,0 +1,76 @@
+---
+---
+
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="container">
+    <div class="cta-content">
+      <h2>Listo para hacer crecer <span class="cta-highlight">tu marca</span>?</h2>
+      <p>Agenda una consulta gratuita de 30 minutos y descubre como podemos impulsar tu negocio.</p>
+      <div class="cta-buttons">
+        <a href="/#contacto" class="btn btn-white">Agendar consulta gratuita &rarr;</a>
+        <a href="/#portafolio" class="btn btn-outline">Ver portafolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1), transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255,255,255,0.05), transparent 40%);
+    pointer-events: none;
+  }
+
+  .cta-content {
+    position: relative;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    color: #fff;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .cta-highlight {
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0.4);
+    text-underline-offset: 8px;
+  }
+
+  .cta-content p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.4);
+  }
+
+  .btn-outline:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
+  }
+</style>

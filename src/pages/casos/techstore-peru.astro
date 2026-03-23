@@ -1,0 +1,698 @@
+---
+import Page from '../../layouts/Page.astro';
+import '../../styles/global.css';
+
+const metrics = [
+  { label: "Ventas primer mes", value: "S/ 500K" },
+  { label: "ROAS", value: "5.2x" },
+  { label: "Trafico organico", value: "+400%" },
+  { label: "Tasa de conversion", value: "3.8%" }
+];
+
+const barData = [
+  { label: "Mes 1", value: 100, amount: "S/ 500K" },
+  { label: "Mes 2", value: 140, amount: "S/ 700K" },
+  { label: "Mes 3", value: 180, amount: "S/ 900K" },
+  { label: "Mes 4", value: 210, amount: "S/ 1.05M" },
+  { label: "Mes 5", value: 250, amount: "S/ 1.25M" },
+  { label: "Mes 6", value: 300, amount: "S/ 1.5M" }
+];
+
+const relatedCases = [
+  {
+    client: "Restaurante Mar Azul",
+    service: "Social Media",
+    result: "+300% engagement",
+    image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&h=250&fit=crop"
+  },
+  {
+    client: "Clinica Salud+",
+    service: "Google Ads",
+    result: "+150% citas",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=250&fit=crop"
+  }
+];
+---
+
+<Page title="TechStore Peru - Caso de Exito | Pixel Studio">
+  <section class="case-hero">
+    <div class="container">
+      <a href="/casos/" class="back-link">&larr; Todos los casos</a>
+      <div class="case-hero-grid">
+        <div class="case-hero-content">
+          <span class="case-tag-label">E-commerce / Tecnologia</span>
+          <h1>TechStore <span class="gradient-text">Peru</span></h1>
+          <p class="case-subtitle">De cero a S/ 500K en ventas en el primer mes con una estrategia integral de e-commerce y publicidad digital.</p>
+          <div class="hero-metrics">
+            {metrics.map((m) => (
+              <div class="hero-metric">
+                <span class="hm-val">{m.value}</span>
+                <span class="hm-lbl">{m.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="case-hero-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="TechStore Peru" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-layout">
+      <div class="content-main">
+        <div class="content-block">
+          <h2>Sobre el <span class="gradient-text">cliente</span></h2>
+          <p>TechStore Peru es una empresa de tecnologia que vende laptops, smartphones, accesorios y gadgets. Tras anos de venta presencial exitosa en Lima, decidieron dar el salto al comercio electronico para expandir su alcance a nivel nacional.</p>
+          <p>Con un catalogo de mas de 2,000 productos y una marca reconocida en el mercado local, necesitaban un partner digital que los ayudara a construir una presencia online solida.</p>
+        </div>
+
+        <div class="content-block">
+          <h2>El <span class="gradient-text">desafio</span></h2>
+          <ul class="challenge-list">
+            <li>No tenian presencia digital ni tienda online</li>
+            <li>Competencia fuerte de marketplaces establecidos</li>
+            <li>Sin experiencia en publicidad digital ni SEO</li>
+            <li>Necesidad de resultados rapidos para justificar la inversion</li>
+            <li>Logistica de envios a nivel nacional sin desarrollar</li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>Estrategia y <span class="gradient-text">enfoque</span></h2>
+          <p>Disenamos una estrategia integral de 3 fases que cubrio desde el desarrollo de la plataforma hasta la adquisicion de clientes:</p>
+          <div class="strategy-cards">
+            <div class="strategy-card">
+              <h4>Fase 1: Plataforma</h4>
+              <p>Desarrollo de e-commerce en Shopify con UX optimizada, pasarela de pagos local y sistema de envios integrado.</p>
+            </div>
+            <div class="strategy-card">
+              <h4>Fase 2: Lanzamiento</h4>
+              <p>Campana de lanzamiento con Google Shopping, Meta Ads con catalogo dinamico y email marketing de pre-registro.</p>
+            </div>
+            <div class="strategy-card">
+              <h4>Fase 3: Escalamiento</h4>
+              <p>Optimizacion continua de campanas, SEO tecnico, remarketing avanzado y programa de referidos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h2>Ejecucion <span class="gradient-text">detallada</span></h2>
+          <p>El proyecto se ejecuto en 8 semanas desde el kick-off hasta el lanzamiento:</p>
+          <ul class="execution-list">
+            <li><strong>Semana 1-2:</strong> Investigacion de mercado, analisis de competencia y definicion de arquitectura.</li>
+            <li><strong>Semana 3-4:</strong> Diseno UI/UX, desarrollo del e-commerce y carga de catalogo.</li>
+            <li><strong>Semana 5-6:</strong> Configuracion de campanas, tracking y landing pages.</li>
+            <li><strong>Semana 7:</strong> Testing, QA y soft launch con audiencia beta.</li>
+            <li><strong>Semana 8:</strong> Lanzamiento oficial con campana integral.</li>
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>Resultados con <span class="gradient-text">graficos</span></h2>
+          <p>Evolucion de ventas mensuales durante los primeros 6 meses:</p>
+          <div class="chart">
+            <div class="chart-bars">
+              {barData.map((bar) => (
+                <div class="chart-bar-wrap">
+                  <span class="bar-amount">{bar.amount}</span>
+                  <div class="chart-bar" style={`height: ${bar.value}px;`}></div>
+                  <span class="bar-label">{bar.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="results-summary">
+            <div class="result-row">
+              <span class="result-name">Inversion en publicidad</span>
+              <div class="result-bar-wrap">
+                <div class="result-bar" style="width: 35%;"></div>
+              </div>
+              <span class="result-val">S/ 96K</span>
+            </div>
+            <div class="result-row">
+              <span class="result-name">Ventas generadas</span>
+              <div class="result-bar-wrap">
+                <div class="result-bar accent" style="width: 100%;"></div>
+              </div>
+              <span class="result-val">S/ 500K</span>
+            </div>
+            <div class="result-row">
+              <span class="result-name">Trafico organico</span>
+              <div class="result-bar-wrap">
+                <div class="result-bar cyan" style="width: 80%;"></div>
+              </div>
+              <span class="result-val">+400%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block testimonial-block">
+          <div class="client-testimonial">
+            <div class="quote-mark">"</div>
+            <p class="quote-text">Pixel Studio no solo creo nuestra tienda online, sino que nos acompano en cada paso del camino. Los resultados superaron nuestras expectativas y hoy el canal digital representa el 60% de nuestras ventas totales.</p>
+            <div class="quote-author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Roberto Castillo" />
+              <div>
+                <strong>Roberto Castillo</strong>
+                <span>CEO, TechStore Peru</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="content-sidebar">
+        <div class="sidebar-card">
+          <h4>Cliente</h4>
+          <p>TechStore Peru</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Industria</h4>
+          <p>Tecnologia / Retail</p>
+        </div>
+        <div class="sidebar-card">
+          <h4>Servicios</h4>
+          <ul>
+            <li>Desarrollo E-commerce</li>
+            <li>Google Ads</li>
+            <li>Meta Ads</li>
+            <li>SEO Tecnico</li>
+            <li>Email Marketing</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h4>Duracion</h4>
+          <p>8 semanas de implementacion + gestion continua</p>
+        </div>
+        <div class="sidebar-card highlight">
+          <h4>Resultado principal</h4>
+          <span class="big-result">S/ 500K</span>
+          <p>en ventas el primer mes</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom: 3rem;">Casos <span class="gradient-text">relacionados</span></h2>
+      <div class="related-grid">
+        {relatedCases.map((rc) => (
+          <div class="related-card">
+            <div class="related-img">
+              <img src={rc.image} alt={rc.client} loading="lazy" />
+            </div>
+            <div class="related-body">
+              <span class="related-service">{rc.service}</span>
+              <h3>{rc.client}</h3>
+              <p>{rc.result}</p>
+              <a href="/casos/" class="case-link">Ver caso &rarr;</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .case-hero {
+    background: var(--primary);
+    color: #fff;
+    padding: 8rem 0 5rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    transition: color 0.3s;
+  }
+
+  .back-link:hover {
+    color: #fff;
+  }
+
+  .case-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .case-tag-label {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-3);
+    margin-bottom: 1rem;
+  }
+
+  .case-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .case-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .hm-val {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hm-lbl {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .case-hero-img {
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .case-hero-img img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .content-block {
+    margin-bottom: 3rem;
+  }
+
+  .content-block h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .content-block p {
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .challenge-list, .execution-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .challenge-list li, .execution-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .challenge-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gradient);
+  }
+
+  .execution-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--accent-3);
+  }
+
+  .strategy-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .strategy-card {
+    background: var(--bg-alt);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+  }
+
+  .strategy-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-1);
+  }
+
+  .strategy-card p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .chart {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  .chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 320px;
+    gap: 1rem;
+  }
+
+  .chart-bar-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .bar-amount {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-1);
+  }
+
+  .chart-bar {
+    width: 100%;
+    max-width: 60px;
+    background: linear-gradient(180deg, #7c3aed, #ec4899);
+    border-radius: 6px 6px 0 0;
+    transition: height 1s ease;
+  }
+
+  .bar-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .results-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .result-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .result-name {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    min-width: 180px;
+  }
+
+  .result-bar-wrap {
+    flex: 1;
+    height: 12px;
+    background: var(--bg-alt);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .result-bar {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 6px;
+  }
+
+  .result-bar.accent {
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+  }
+
+  .result-bar.cyan {
+    background: linear-gradient(90deg, #06b6d4, #7c3aed);
+  }
+
+  .result-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    min-width: 60px;
+    text-align: right;
+    color: var(--text);
+  }
+
+  .testimonial-block {
+    margin-top: 2rem;
+  }
+
+  .client-testimonial {
+    background: var(--primary);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    color: #fff;
+  }
+
+  .quote-mark {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .quote-text {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.8) !important;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .quote-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .quote-author img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .quote-author strong {
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .quote-author span {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .content-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: sticky;
+    top: 6rem;
+  }
+
+  .sidebar-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+  }
+
+  .sidebar-card h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-card p {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .sidebar-card li {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .sidebar-card.highlight {
+    background: var(--primary);
+    border-color: transparent;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .sidebar-card.highlight h4 {
+    color: rgba(255,255,255,0.6);
+  }
+
+  .sidebar-card.highlight p {
+    color: rgba(255,255,255,0.6);
+  }
+
+  .big-result {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0.5rem 0;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .related-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg);
+    transition: all 0.3s;
+  }
+
+  .related-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .related-img {
+    height: 180px;
+    overflow: hidden;
+  }
+
+  .related-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .related-body {
+    padding: 1.5rem;
+  }
+
+  .related-service {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-1);
+  }
+
+  .related-body h3 {
+    font-size: 1.1rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .related-body p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .case-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-1);
+  }
+
+  .case-link:hover {
+    color: var(--accent-2);
+  }
+
+  @media (max-width: 968px) {
+    .case-hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+    .content-sidebar {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .sidebar-card {
+      flex: 1;
+      min-width: 200px;
+    }
+    .strategy-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-metrics {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .result-row {
+      flex-wrap: wrap;
+    }
+    .result-name {
+      min-width: 100%;
+    }
+  }
+</style>

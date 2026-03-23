@@ -1,0 +1,148 @@
+---
+const team = [
+  {
+    name: "Alejandra Vega",
+    role: "Creative Director",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
+    linkedin: "#",
+    instagram: "#"
+  },
+  {
+    name: "Carlos Mendoza",
+    role: "Head of Strategy",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    linkedin: "#",
+    instagram: "#"
+  },
+  {
+    name: "Diego Ramirez",
+    role: "Lead Developer",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+    linkedin: "#",
+    instagram: "#"
+  },
+  {
+    name: "Valentina Torres",
+    role: "Social Media Manager",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    linkedin: "#",
+    instagram: "#"
+  }
+];
+---
+
+<section class="section" id="equipo">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Equipo</span>
+      <h2>Las mentes <span class="gradient-text">creativas</span></h2>
+      <p>Un equipo multidisciplinario apasionado por el marketing digital y la innovacion.</p>
+    </div>
+    <div class="team-grid">
+      {team.map((member) => (
+        <div class="team-card">
+          <div class="team-photo">
+            <img src={member.image} alt={member.name} loading="lazy" />
+            <div class="team-social">
+              <a href={member.linkedin} aria-label="LinkedIn">LI</a>
+              <a href={member.instagram} aria-label="Instagram">IG</a>
+            </div>
+          </div>
+          <h3>{member.name}</h3>
+          <p class="team-role">{member.role}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .team-card {
+    text-align: center;
+  }
+
+  .team-photo {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+  }
+
+  .team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .team-card:hover .team-photo img {
+    transform: scale(1.1);
+  }
+
+  .team-social {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(124,58,237,0.8), rgba(236,72,153,0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .team-card:hover .team-social {
+    opacity: 1;
+  }
+
+  .team-social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  .team-social a:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .team-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .team-role {
+    font-size: 0.875rem;
+    color: var(--accent-1);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  @media (max-width: 968px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

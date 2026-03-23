@@ -1,0 +1,137 @@
+---
+const services = [
+  {
+    icon: "📱",
+    title: "Social Media Management",
+    desc: "Gestion integral de redes sociales con contenido estrategico que conecta con tu audiencia.",
+    items: ["Calendario de contenido", "Community management", "Reels & stories", "Reportes mensuales"]
+  },
+  {
+    icon: "🎯",
+    title: "Publicidad Digital",
+    desc: "Campanas optimizadas en las principales plataformas para maximizar tu retorno de inversion.",
+    items: ["Google Ads", "Meta Ads", "TikTok Ads", "LinkedIn Ads"]
+  },
+  {
+    icon: "🎨",
+    title: "Branding & Diseno",
+    desc: "Identidad visual que diferencia tu marca y la posiciona en la mente de tu publico.",
+    items: ["Logo & identidad", "Manual de marca", "Diseno grafico", "Packaging"]
+  },
+  {
+    icon: "💻",
+    title: "Desarrollo Web",
+    desc: "Sitios web rapidos, modernos y optimizados para convertir visitantes en clientes.",
+    items: ["Landing pages", "E-commerce", "Aplicaciones web", "Optimizacion UX"]
+  },
+  {
+    icon: "📈",
+    title: "SEO & Contenido",
+    desc: "Posicionamiento organico y estrategia de contenido para atraer trafico calificado.",
+    items: ["Auditoria SEO", "Content marketing", "Link building", "Blog strategy"]
+  },
+  {
+    icon: "📊",
+    title: "Analitica y Data",
+    desc: "Metricas claras y reportes accionables para tomar decisiones basadas en datos.",
+    items: ["Google Analytics", "Dashboards", "A/B testing", "Optimizacion CRO"]
+  }
+];
+---
+
+<section class="section section-alt" id="servicios">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Servicios</span>
+      <h2>Soluciones digitales <span class="gradient-text">integrales</span></h2>
+      <p>Todo lo que tu marca necesita para crecer en el mundo digital, bajo un mismo equipo.</p>
+    </div>
+    <div class="services-grid">
+      {services.map((s) => (
+        <div class="service-card card card-gradient-border">
+          <div class="service-icon">{s.icon}</div>
+          <h3>{s.title}</h3>
+          <p>{s.desc}</p>
+          <ul>
+            {s.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .service-card {
+    padding: 2.5rem 2rem;
+    position: relative;
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(236,72,153,0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .service-card li {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .service-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gradient);
+  }
+
+  @media (max-width: 968px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

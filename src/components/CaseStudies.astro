@@ -1,0 +1,217 @@
+---
+const cases = [
+  {
+    client: "Restaurante Mar Azul",
+    challenge: "Baja presencia en redes sociales y poco engagement con su audiencia local.",
+    solution: "Estrategia de contenido visual, influencer marketing y campanas geolocalizadas.",
+    result: "+300% engagement",
+    metrics: [
+      { label: "Engagement", value: "+300%" },
+      { label: "Seguidores", value: "+15K" },
+      { label: "Reservas online", value: "+180%" }
+    ],
+    image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=700&h=400&fit=crop",
+    tag: "Social Media"
+  },
+  {
+    client: "TechStore Peru",
+    challenge: "Lanzamiento de e-commerce sin traccion ni ventas digitales.",
+    solution: "Desarrollo web, SEO tecnico, campanas de performance y email marketing.",
+    result: "S/ 500K en ventas",
+    metrics: [
+      { label: "Ventas mes 1", value: "S/ 500K" },
+      { label: "ROAS", value: "5.2x" },
+      { label: "Trafico organico", value: "+400%" }
+    ],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=400&fit=crop",
+    tag: "E-commerce"
+  },
+  {
+    client: "Clinica Salud+",
+    challenge: "Depender de referidos y tener baja visibilidad en busquedas de Google.",
+    solution: "Campanas de Google Ads, landing pages optimizadas y seguimiento de conversiones.",
+    result: "+150% citas",
+    metrics: [
+      { label: "Citas agendadas", value: "+150%" },
+      { label: "Costo por cita", value: "-60%" },
+      { label: "Conversion landing", value: "12.5%" }
+    ],
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=700&h=400&fit=crop",
+    tag: "Google Ads"
+  }
+];
+---
+
+<section class="section section-alt" id="casos">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Casos de Exito</span>
+      <h2>Resultados que <span class="gradient-text">hablan por si solos</span></h2>
+      <p>Historias reales de marcas que transformamos con estrategia digital.</p>
+    </div>
+    <div class="cases-list">
+      {cases.map((c) => (
+        <div class="case-card">
+          <div class="case-image">
+            <img src={c.image} alt={c.client} loading="lazy" />
+            <span class="case-tag">{c.tag}</span>
+          </div>
+          <div class="case-content">
+            <h3>{c.client}</h3>
+            <div class="case-section">
+              <h4>Desafio</h4>
+              <p>{c.challenge}</p>
+            </div>
+            <div class="case-section">
+              <h4>Solucion</h4>
+              <p>{c.solution}</p>
+            </div>
+            <div class="case-metrics">
+              {c.metrics.map((m) => (
+                <div class="case-metric">
+                  <span class="metric-value">{m.value}</span>
+                  <span class="metric-label">{m.label}</span>
+                </div>
+              ))}
+            </div>
+            <a href="/casos/" class="btn btn-primary btn-sm">Ver caso completo &rarr;</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .case-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: var(--bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .case-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .case-card:nth-child(even) {
+    direction: rtl;
+  }
+
+  .case-card:nth-child(even) > * {
+    direction: ltr;
+  }
+
+  .case-image {
+    position: relative;
+    min-height: 300px;
+  }
+
+  .case-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .case-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.375rem 1rem;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .case-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .case-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-section {
+    margin-bottom: 1rem;
+  }
+
+  .case-section h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-1);
+    margin-bottom: 0.375rem;
+  }
+
+  .case-section p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .case-metrics {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .case-metric {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .metric-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .metric-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .btn-sm {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+    align-self: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .case-card {
+      grid-template-columns: 1fr;
+    }
+    .case-card:nth-child(even) {
+      direction: ltr;
+    }
+    .case-image {
+      min-height: 200px;
+    }
+  }
+</style>

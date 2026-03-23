@@ -1,0 +1,108 @@
+---
+const steps = [
+  { number: "01", title: "Descubrimiento", desc: "Analizamos tu marca, mercado, competencia y objetivos para entender el panorama completo." },
+  { number: "02", title: "Estrategia", desc: "Disenamos un plan personalizado con KPIs claros y un roadmap de ejecucion." },
+  { number: "03", title: "Diseno", desc: "Creamos los activos visuales y la experiencia que conectara con tu audiencia." },
+  { number: "04", title: "Ejecucion", desc: "Implementamos las campanas, lanzamos los activos y activamos todos los canales." },
+  { number: "05", title: "Optimizacion", desc: "Medimos, iteramos y optimizamos continuamente para maximizar resultados." }
+];
+---
+
+<section class="section section-dark" id="proceso">
+  <div class="container">
+    <div class="section-header">
+      <span class="label" style="color: var(--accent-3);">Nuestro Proceso</span>
+      <h2>De la idea al <span class="gradient-text">resultado</span></h2>
+      <p style="color: rgba(255,255,255,0.6);">Un proceso probado que garantiza resultados medibles en cada proyecto.</p>
+    </div>
+    <div class="process-timeline">
+      {steps.map((step, i) => (
+        <div class="process-step">
+          <div class="step-marker">
+            <span class="step-number">{step.number}</span>
+            {i < steps.length - 1 && <div class="step-line"></div>}
+          </div>
+          <div class="step-content">
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+  }
+
+  .step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .step-number {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(180deg, #7c3aed, #ec4899);
+    opacity: 0.3;
+    min-height: 60px;
+  }
+
+  .step-content {
+    padding-bottom: 3rem;
+  }
+
+  .step-content h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .step-content p {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .process-step {
+      gap: 1.25rem;
+    }
+    .step-number {
+      width: 44px;
+      height: 44px;
+      font-size: 0.85rem;
+    }
+  }
+</style>

@@ -1,0 +1,177 @@
+---
+---
+
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Contacto</span>
+      <h2>Conversemos sobre <span class="gradient-text">tu proyecto</span></h2>
+      <p>Cuentanos sobre tu negocio y te preparamos una propuesta personalizada.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required />
+          </div>
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+51 999 888 777" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="servicio">Servicio de interes</label>
+            <select id="servicio" name="servicio">
+              <option value="">Selecciona un servicio</option>
+              <option value="social-media">Social Media Management</option>
+              <option value="publicidad">Publicidad Digital</option>
+              <option value="branding">Branding & Diseno</option>
+              <option value="web">Desarrollo Web</option>
+              <option value="seo">SEO & Contenido</option>
+              <option value="analitica">Analitica y Data</option>
+              <option value="integral">Servicio Integral</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="presupuesto">Presupuesto mensual</label>
+            <select id="presupuesto" name="presupuesto">
+              <option value="">Selecciona un rango</option>
+              <option value="1k-3k">S/ 1,000 - S/ 3,000</option>
+              <option value="3k-5k">S/ 3,000 - S/ 5,000</option>
+              <option value="5k-10k">S/ 5,000 - S/ 10,000</option>
+              <option value="10k-20k">S/ 10,000 - S/ 20,000</option>
+              <option value="20k+">S/ 20,000+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuentanos sobre tu proyecto y objetivos..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Enviar mensaje &rarr;</button>
+      </form>
+
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>Oficina</h3>
+          <p>Av. Javier Prado Este 476, Piso 12<br />San Isidro, Lima, Peru</p>
+        </div>
+        <div class="info-card">
+          <h3>Contacto directo</h3>
+          <p>hola@pixelstudio.pe<br />+51 999 888 777</p>
+        </div>
+        <div class="info-card">
+          <h3>Horario</h3>
+          <p>Lunes a Viernes<br />9:00 AM - 6:00 PM</p>
+        </div>
+        <div class="info-card highlight">
+          <h3>Agenda una videollamada</h3>
+          <p>30 minutos gratuitos para conocer tu proyecto y proponerte soluciones.</p>
+          <a href="#" class="btn btn-primary" style="margin-top:1rem;">Agendar ahora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-form {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-group:last-child {
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-full {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .info-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .info-card.highlight {
+    background: var(--primary);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  .info-card.highlight h3 {
+    color: #fff;
+  }
+
+  .info-card.highlight p {
+    color: rgba(255,255,255,0.7);
+  }
+
+  @media (max-width: 968px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    .contact-form {
+      padding: 1.5rem;
+    }
+  }
+</style>

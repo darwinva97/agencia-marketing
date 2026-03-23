@@ -1,0 +1,135 @@
+---
+const posts = [
+  {
+    title: "Tendencias de marketing digital 2026",
+    excerpt: "Descubre las estrategias que estan dominando el panorama digital este ano: IA generativa, video corto y personalizacion.",
+    category: "Tendencias",
+    date: "15 Mar 2026",
+    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=350&fit=crop"
+  },
+  {
+    title: "Como crear una estrategia de redes sociales",
+    excerpt: "Guia paso a paso para construir una presencia solida en redes sociales que genere engagement y conversiones.",
+    category: "Social Media",
+    date: "8 Mar 2026",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=350&fit=crop"
+  },
+  {
+    title: "Google Ads vs Meta Ads: cual elegir?",
+    excerpt: "Comparativa detallada para ayudarte a decidir donde invertir tu presupuesto publicitario segun tu negocio.",
+    category: "Publicidad",
+    date: "1 Mar 2026",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=350&fit=crop"
+  }
+];
+---
+
+<section class="section" id="blog">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Blog</span>
+      <h2>Recursos y <span class="gradient-text">aprendizajes</span></h2>
+      <p>Articulos, guias y tendencias del marketing digital para tu negocio.</p>
+    </div>
+    <div class="blog-grid">
+      {posts.map((post) => (
+        <article class="blog-card card card-gradient-border">
+          <div class="blog-image">
+            <img src={post.image} alt={post.title} loading="lazy" />
+            <span class="blog-category">{post.category}</span>
+          </div>
+          <div class="blog-content">
+            <span class="blog-date">{post.date}</span>
+            <h3>{post.title}</h3>
+            <p>{post.excerpt}</p>
+            <a href="#" class="blog-link">Leer mas &rarr;</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .blog-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .blog-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .blog-card:hover .blog-image img {
+    transform: scale(1.05);
+  }
+
+  .blog-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255,255,255,0.95);
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-1);
+  }
+
+  .blog-content {
+    padding: 1.5rem;
+  }
+
+  .blog-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .blog-content h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0.75rem;
+    line-height: 1.3;
+  }
+
+  .blog-content p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .blog-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-1);
+    transition: color 0.3s;
+  }
+
+  .blog-link:hover {
+    color: var(--accent-2);
+  }
+
+  @media (max-width: 968px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+</style>
